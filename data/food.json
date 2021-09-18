@@ -1,0 +1,332 @@
+[
+  {
+    "name": "Raspberries",
+    "amount": 1,
+    "type": "stamina",
+    "health": 7,
+    "stamina": 20,
+    "duration": 10,
+    "healing": 1,
+    "ingredients": {"Raspberries": 1}
+  },
+  {
+    "name": "Mushroom",
+    "amount": 1,
+    "type": "balanced",
+    "health": 15,
+    "stamina": 15,
+    "duration": 15,
+    "healing": 1,
+    "ingredients": {"Mushroom": 1}
+  },
+  {
+    "name": "Blueberries",
+    "amount": 1,
+    "type": "stamina",
+    "health": 8,
+    "stamina": 25,
+    "duration": 10,
+    "healing": 1,
+    "ingredients": {"Blueberries": 1}
+  },
+  {
+    "name": "Carrot",
+    "amount": 1,
+    "type": "stamina",
+    "health": 10,
+    "stamina": 32,
+    "duration": 15,
+    "healing": 1,
+    "ingredients": {"Carrot": 1}
+  },
+  {
+    "name": "Cloudberries",
+    "amount": 1,
+    "type": "stamina",
+    "health": 13,
+    "stamina": 40,
+    "duration": 15,
+    "healing": 1,
+    "ingredients": {"Cloudberries": 1}
+  },
+  {
+    "name": "Honey",
+    "amount": 1,
+    "type": "stamina",
+    "health": 8,
+    "stamina": 35,
+    "duration": 15,
+    "healing": 1,
+    "ingredients": {"Honey": 1}
+  },
+  {
+    "name": "Yellow mushroom",
+    "amount": 1,
+    "type": "stamina",
+    "health": 10,
+    "stamina": 30,
+    "duration": 10,
+    "healing": 1,
+    "ingredients": {"Yellow mushroom": 1}
+  },
+  {
+    "name": "Carrot soup",
+    "amount": 1,
+    "type": "stamina",
+    "health": 15,
+    "stamina": 45,
+    "duration": 25,
+    "healing": 2,
+    "ingredients": {"Mushroom": 1, "Carrot": 3}
+  },
+  {
+    "name": "Queens yam",
+    "amount": 4,
+    "type": "stamina",
+    "health": 14,
+    "stamina": 40,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Raspberries": 8, "Blueberries": 6}
+  },
+  {
+    "name": "Grilled neck tail",
+    "amount": 1,
+    "type": "health",
+    "health": 25,
+    "stamina": 8,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Neck tail": 1}
+  },
+  {
+    "name": "Cooked boar meat",
+    "amount": 1,
+    "type": "health",
+    "health": 30,
+    "stamina": 10,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Boar meat": 1}
+  },
+  {
+    "name": "Bread",
+    "amount": 2,
+    "type": "stamina",
+    "health": 25,
+    "stamina": 75,
+    "duration": 30,
+    "healing": 1,
+    "ingredients": {"Barley flour": 10}
+  },
+  {
+    "name": "Cooked fish",
+    "amount": 1,
+    "type": "health",
+    "health": 45,
+    "stamina": 15,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Raw fish": 1}
+  },
+  {
+    "name": "Turnip stew",
+    "amount": 1,
+    "type": "stamina",
+    "health": 18,
+    "stamina": 55,
+    "duration": 25,
+    "healing": 2,
+    "ingredients": {"Boar meat": 1, "Turnip": 3}
+  },
+  {
+    "name": "Sausages",
+    "amount": 4,
+    "type": "health",
+    "health": 55,
+    "stamina": 18,
+    "duration": 25,
+    "healing": 3,
+    "ingredients": {"Entrails": 4, "Boar meat": 1, "Thistle": 1}
+  },
+  {
+    "name": "Fish wraps",
+    "amount": 1,
+    "type": "health",
+    "health": 70,
+    "stamina": 23,
+    "duration": 25,
+    "healing": 4,
+    "ingredients": {"Raw fish": 2, "Barley flour": 4}
+  },
+  {
+    "name": "Cooked serpent meat",
+    "amount": 1,
+    "type": "health",
+    "health": 70,
+    "stamina": 23,
+    "duration": 25,
+    "healing": 3,
+    "ingredients": {"Serpent meat": 1}
+  },
+  {
+    "name": "Cooked lox meat",
+    "amount": 1,
+    "type": "health",
+    "health": 50,
+    "stamina": 16,
+    "duration": 20,
+    "healing": 4,
+    "ingredients": {"Lox meat": 1}
+  },
+  {
+    "name": "Serpent stew",
+    "amount": 1,
+    "type": "health",
+    "health": 80,
+    "stamina": 26,
+    "duration": 30,
+    "healing": 4,
+    "ingredients": {"Mushroom": 1, "Serpent meat": 1, "Honey": 2}
+  },
+  {
+    "name": "Lox meat pie",
+    "amount": 1,
+    "type": "health",
+    "health": 75,
+    "stamina": 24,
+    "duration": 30,
+    "healing": 4,
+    "ingredients": {"Barley flour": 4, "Cloudberries": 2, "Lox meat": 2}
+  },
+  {
+    "name": "Blood pudding",
+    "amount": 1,
+    "type": "stamina",
+    "health": 23,
+    "stamina": 70,
+    "duration": 25,
+    "healing": 1,
+    "ingredients": {"Thistle": 2, "Bloodbag": 2, "Barley flour": 4}
+  },
+  {
+    "name": "Boar jerky",
+    "amount": 2,
+    "type": "balanced",
+    "health": 20,
+    "stamina": 20,
+    "duration": 30,
+    "healing": 1,
+    "ingredients": {"Boar meat": 1, "Honey": 1}
+  },
+  {
+    "name": "Deer stew",
+    "amount": 1,
+    "type": "health",
+    "health": 40,
+    "stamina": 13,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Deer meat": 1, "Blueberries": 1, "Carrot": 1}
+  },
+  {
+    "name": "Muckshake",
+    "amount": 1,
+    "type": "stamina",
+    "health": 16,
+    "stamina": 50,
+    "duration": 20,
+    "healing": 1,
+    "ingredients": {"Ooze": 1, "Raspberries": 2, "Blueberries": 2}
+  },
+  {
+    "name": "Onion",
+    "amount": 1,
+    "type": "stamina",
+    "health": 13,
+    "stamina": 40,
+    "duration": 15,
+    "healing": 1,
+    "ingredients": {"Onion": 1}
+  },
+  {
+    "name": "Minced meat sausage",
+    "amount": 1,
+    "type": "health",
+    "health": 45,
+    "stamina": 15,
+    "duration": 25,
+    "healing": 3,
+    "ingredients": {"Boar meat": 1, "Neck tail": 1, "Carrot": 1}
+  },
+  {
+    "name": "Wolf jerky",
+    "amount": 2,
+    "type": "balanced",
+    "health": 30,
+    "stamina": 30,
+    "duration": 30,
+    "healing": 1,
+    "ingredients": {"Wolf meat": 1, "Honey": 1}
+  },
+  {
+    "name": "Onion soup",
+    "amount": 1,
+    "type": "stamina",
+    "health": 20,
+    "stamina": 60,
+    "duration": 20,
+    "healing": 1,
+    "ingredients": {"Onion": 3}
+  },
+  {
+    "name": "Wolf skewer",
+    "amount": 1,
+    "type": "health",
+    "health": 65,
+    "stamina": 21,
+    "duration": 25,
+    "healing": 3,
+    "ingredients": {"Wolf meat": 1, "Mushroom": 1, "Onion": 1}
+  },
+  {
+    "name": "Black soup",
+    "amount": 1,
+    "type": "health",
+    "health": 50,
+    "stamina": 17,
+    "duration": 20,
+    "healing": 3,
+    "ingredients": {"Bloodbag": 1, "Honey": 1, "Turnip": 1}
+  },
+  {
+    "name": "Cooked wolf meat",
+    "amount": 1,
+    "type": "health",
+    "health": 45,
+    "stamina": 15,
+    "duration": 20,
+    "healing": 3,
+    "ingredients": {"Wolf meat": 1}
+  },
+  {
+    "name": "Eyescream",
+    "amount": 1,
+    "type": "stamina",
+    "health": 21,
+    "stamina": 65,
+    "duration": 25,
+    "healing": 1,
+    "ingredients": {"Greydwarf eye": 3, "Freeze gland": 1}
+  },
+  {
+    "name": "Cooked deer meat",
+    "amount": 1,
+    "type": "health",
+    "health": 35,
+    "stamina": 12,
+    "duration": 20,
+    "healing": 2,
+    "ingredients": {"Deer meat": 1}
+  }
+]
