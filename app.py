@@ -24,6 +24,10 @@ def _load_food_json() -> Dict:
         return json.load(f)
 
 
+def _food_json_serialized() -> str:
+    return json.dumps(_load_food_json(), indent=2)
+
+
 @st.cache
 def load_food_df() -> pd.DataFrame:
     """Load food data from JSON into Pandas DataFrame."""
@@ -78,6 +82,7 @@ def recipes() -> List[str]:
 def st_init():
     """Initialize the Streamlit app."""
     st.set_page_config(page_title="Valheim Food Stats")
+    st.sidebar.download_button("Download JSON", _food_json_serialized(), "vhfood.json")
     st.title("Valheim Food Statistics")
     st.caption(f"Valheim Version: {_vhver()}")
 
