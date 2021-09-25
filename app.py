@@ -150,7 +150,6 @@ def main():
         .bar(subset=["stamina"], color="#ef553b")
         .bar(subset=["total"], color="#ab63fa")
         .bar(subset=["duration"], color="#00cc96"),
-        width=1000,
         height=1000,
     )
 
