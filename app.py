@@ -49,8 +49,8 @@ def recipes() -> List[str]:
         if len(d["ingredients"]) < 2:
             continue
         rec[i] = (
-            d["name"]
-            + (" x" + str(d["amount"]) if d["amount"] > 1 else "")
+            f"{d['name'].upper()}"
+            + (f" x{d['amount']}" if d["amount"] > 1 else "")
             + "\n"
             + "\n".join(f"{k}: {v}" for k, v in d["ingredients"].items())
             + "\n"
