@@ -101,13 +101,25 @@ def plotly_hsd(df):
         secondary_y=True,
     )
     fig.update_layout(
-        barmode="stack", title_text="Food Ranking", width=1000, height=500
+        barmode="stack",
+        # Show each food item as single datum in stacked bar chart.
+        hovermode="x",
+        # Reduce empty space around chart area.
+        margin={
+            "b": 20,
+            "l": 0,
+            "r": 0,
+            "t": 20,
+        },
+        # Bar charts shouldn't be too tall.
+        height=400,
     )
     # Descriptive axis labels.
-    fig.update_yaxes(title_text="Health & Stamina", secondary_y=False)
-    fig.update_yaxes(title_text="Duration (min)", secondary_y=True)
-    # Show all parameters per food item on hover: health, stamina, and duration.
-    fig.update_layout(hovermode="x")
+    fig.update_yaxes(title_text="Health & Stamina", showgrid=False, secondary_y=False)
+    fig.update_yaxes(title_text="Duration (min)", showgrid=False, secondary_y=True)
+    # Always show all food items on the x-axis.
+    fig.update_xaxes(tickmode="linear")
+    return fig
     return fig
 
 
@@ -143,7 +155,13 @@ def main():
     )
 
     st.header("Food Ranking")
-    st.plotly_chart(plotly_hsd(df[select_mask]), width=1000)
+    st.plotly_chart(
+        plotly_hsd(df[select_mask]),
+        config={
+            "displayModeBar": False,
+        },
+    )
+
     # TODO: Style with custom CSS to display nicely in discrete boxes.
     st.header("Recipes")
     with st.container():
