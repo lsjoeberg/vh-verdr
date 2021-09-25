@@ -77,7 +77,7 @@ def recipes() -> List[str]:
 
 def st_init():
     """Initialize the Streamlit app."""
-    st.set_page_config(layout="wide", page_title="Valheim Food Stats")
+    st.set_page_config(page_title="Valheim Food Stats")
     st.title("Valheim Food Statistics")
     st.caption(f"Valheim Version: {_vhver()}")
 
