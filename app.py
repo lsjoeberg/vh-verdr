@@ -18,20 +18,17 @@ def _vhver() -> str:
     return ".".join(str(v) for v in GAME_VERSION.values())
 
 
-def load_food_json() -> Dict:
+@st.cache
+def _load_food_json() -> Dict:
     """Load food data from JSON into a Python dictionary."""
     with open("data/food.json", "r") as f:
         return json.load(f)
 
 
+@st.cache
 def load_food_df() -> pd.DataFrame:
     """Load food data from JSON into Pandas DataFrame."""
-    return pd.read_json("data/food.json", orient="records")
-
-
-@st.cache
-def add_total(df: pd.DataFrame) -> pd.DataFrame:
-    """Add total food benefit; health and stamina."""
+    df = pd.read_json("data/food.json", orient="records")
     df.insert(5, "total", df["health"] + df["stamina"])
     return df.sort_values(by="total").reset_index(drop=True)
 
@@ -53,7 +50,7 @@ def ingredient_mask(df: pd.DataFrame, selection: List[str]) -> pd.DataFrame:
 @st.cache
 def recipes() -> List[str]:
     """Get list of formatted recipes for each food item."""
-    data = load_food_json()
+    data = _load_food_json()
     rec = [None] * len(data)
     for i, d in enumerate(data):
         if len(d["ingredients"]) < 2:
@@ -143,7 +140,7 @@ def main():
     st_init()
 
     # Load data.
-    df = add_total(load_food_df())
+    df = load_food_df()
 
     # Ingredient filtering.
     select_ing = st.sidebar.multiselect(
