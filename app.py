@@ -58,6 +58,9 @@ def recipes() -> List[str]:
     return list(filter(None, rec))
 
 
+# ----- Streamlit Layout and Formatting -----
+
+
 def st_init():
     """Initialize the Streamlit app."""
     st.set_page_config(layout="wide")
@@ -73,6 +76,9 @@ def st_recipes(nc):
     npc = (nr + nc) // nc
     for i in range(nr):
         cols[i // npc].text(rec[i])
+
+
+# ----- Plots -----
 
 
 def plotly_hsd(df):
@@ -105,6 +111,9 @@ def plotly_hsd(df):
     return fig
 
 
+# ----- Main -----
+
+
 def main():
     """Main application function."""
 
@@ -120,6 +129,7 @@ def main():
     )
     select_mask = ingredient_mask(df, select_ing)
 
+    st.header("List of Food Stats")
     st.dataframe(
         # FIXME drop column since style.hide_columns doesn't work
         data=df[select_mask]
@@ -131,6 +141,8 @@ def main():
         width=1000,
         height=1000,
     )
+
+    st.header("Food Ranking")
     st.plotly_chart(plotly_hsd(df[select_mask]), width=1000)
     # TODO: Style with custom CSS to display nicely in discrete boxes.
     st.header("Recipes")
