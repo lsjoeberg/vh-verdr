@@ -8,6 +8,16 @@ import streamlit as st
 from plotly.subplots import make_subplots
 
 
+@st.cache
+def _vhver() -> str:
+    GAME_VERSION = {
+        "major": 0,
+        "minor": 202,
+        "patch": 19,
+    }
+    return ".".join(str(v) for v in GAME_VERSION.values())
+
+
 def load_food_json() -> Dict:
     """Load food data from JSON into a Python dictionary."""
     with open("data/food.json", "r") as f:
@@ -65,7 +75,7 @@ def st_init():
     """Initialize the Streamlit app."""
     st.set_page_config(layout="wide")
     st.title("Valheim Food Statistics")
-    st.caption("Valheim Version: 0.202.19")
+    st.caption(f"Valheim Version: {_vhver()}")
 
 
 def st_recipes(nc):
