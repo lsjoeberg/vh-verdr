@@ -2,7 +2,6 @@ import json
 from typing import Dict, List, Set
 
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 from plotly.subplots import make_subplots
