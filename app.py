@@ -53,13 +53,14 @@ def recipes() -> List[str]:
     data = _load_food_json()
     rec = [None] * len(data)
     for i, d in enumerate(data):
-        if len(d["ingredients"]) < 2:
+        name, amount, ingr = d["name"], d["amount"], d["ingredients"]
+        if len(ingr) < 2 and list(ingr.values())[0] < 2:
             continue
         rec[i] = (
-            f"{d['name'].upper()}"
-            + (f" x{d['amount']}" if d["amount"] > 1 else "")
+            f"{name.upper()}"
+            + (f" x{amount}" if amount > 1 else "")
             + "\n"
-            + "\n".join(f"{k}: {v}" for k, v in d["ingredients"].items())
+            + "\n".join(f"{k}: {v}" for k, v in ingr.items())
             + "\n"
         )
     return list(filter(None, rec))
