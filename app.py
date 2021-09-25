@@ -139,12 +139,12 @@ def main():
     select_ing = st.sidebar.multiselect(
         "Ingredients", get_ingredients(df), get_ingredients(df)
     )
-    select_mask = ingredient_mask(df, select_ing)
+    ingredient_choice = ingredient_mask(df, select_ing)
 
     st.header("List of Food Stats")
     st.dataframe(
         # FIXME drop column since style.hide_columns doesn't work
-        data=df[select_mask]
+        data=df[ingredient_choice]
         .drop(columns=["amount", "ingredients"])
         .style.bar(subset=["health"], color="#636efa")
         .bar(subset=["stamina"], color="#ef553b")
@@ -155,7 +155,7 @@ def main():
 
     st.header("Food Ranking")
     st.plotly_chart(
-        plotly_hsd(df[select_mask]),
+        plotly_hsd(df[ingredient_choice]),
         config={
             "displayModeBar": False,
         },
