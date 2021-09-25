@@ -38,10 +38,17 @@ def get_ingredients(df: pd.DataFrame) -> Set[str]:
     return set(sorted([k for d in df.ingredients for k in d.keys()]))
 
 
-def ingredient_mask(df: pd.DataFrame, selection: List[str]) -> pd.DataFrame:
+@st.cache
+def ingredient_mask(
+    df: pd.DataFrame, selection: List[str], mode: bool = str
+) -> pd.DataFrame:
     """Get logical DataFrame mask rows containing selected ingredients."""
+    if mode == "Inclusive":
+        func = any
+    else:
+        func = all
     return df.apply(
-        lambda x: all(k in selection for k in x["ingredients"].keys()),
+        lambda x: func(k in selection for k in x["ingredients"].keys()),
         axis=1,
     )
 
@@ -143,10 +150,19 @@ def main():
     df = load_food_df()
 
     # Ingredient filtering.
+    st.sidebar.header("Ingredient Selection")
+    select_mode = st.sidebar.radio(
+        "Selection Mode",
+        ("Exclusive", "Inclusive"),
+        help="""
+Exclusive: Show only food items that can be produced given the selected ingredients.
+Inclusive: Show all food items that contain the any of the selected ingredients.
+""",
+    )
     select_ing = st.sidebar.multiselect(
         "Ingredients", get_ingredients(df), get_ingredients(df)
     )
-    ingredient_choice = ingredient_mask(df, select_ing)
+    ingredient_choice = ingredient_mask(df, select_ing, select_mode)
 
     st.header("List of Food Stats")
     st.dataframe(
